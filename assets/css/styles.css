@@ -21,7 +21,7 @@ a:hover {
 /*conf menu*/
 
 body {
-  font-family: Helvetica,Arial,sans-serif;
+  font-family: 'Rubik', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 30px;
@@ -45,33 +45,38 @@ body::-webkit-scrollbar-thumb{
 }
 
 main {
-  margin-left: 6rem;
   padding: 1rem;
 }
 
 .navbar {
-  position: fixed;
-  overflow: hidden;
+  position: relative;
   background: var(--bg-primary);
-  transition: width 600ms ease;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.logo {
+  width: 100px;
+  margin-right: 500px;
 }
 
 .navbar-nav {
   list-style: none;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 0;
   margin: 0;
 }
 
-.nav-item {
-  width: 100%;
-}
-
-.nav-item:last-child {
-  margin-top: auto;
+.nav-logo {
+  display: flex;
+  align-items: left;
+  height: 5rem;
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  padding-right: 10px;
 }
 
 .nav-link {
@@ -80,67 +85,16 @@ main {
   height: 5rem;
   text-decoration: none;
   filter: grayscale(100%) opacity(0.7);
-}
-
-.nav-link:hover {
-  filter: grayscale(0%) opacity(1);
-  color: var(--text-secondary);
-  background: var(--bg-secondary);
+  padding-right: 10px;
 }
 
 .link-text {
-  display: none;
   margin-left: 1rem;
   color: var(--text-secondary);
 }
 
-
-.nav-link svg {
-  width: 2rem;
-  min-width: 2rem;
-  margin: 0 1.5rem;
-}
-
-.fa-primary {
-  color: #4bd2ff;
-}
-
-.fa-secondary {
-  color:  var(--text-secondary);
-}
-
-.logo {
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 1.5rem;
-  letter-spacing: 0.3ch;
-  width: 100%;
-}
-
-.logo-text {
-  display: inline;
-  position: absolute;
-  left: -999px;
-  transition: var(--transition-speed);
-}
-
-.logo svg{
-  transform: rotate(0deg);
-  transition: var(--transition-speed);
-}
-
-.navbar:hover .logo svg {
-  transform: rotate(-180deg);
-}
 .nav-link:hover {
- background-color: var(--text-primary);
-}
-
-.nav-link:hover .fa-secondary {
-  color: white;
+  background-color: var(--text-primary);
 }
 
 
@@ -160,13 +114,14 @@ padding: 0;
 section {
   text-align: center;
   padding: 50px;
+  padding-left: 0;
   padding-right: 0;
   background-color: var(--text-secondary);
   color: #000000;
 }
 
 .gato-logo {
-  width: 500px;
+  width: 400px;
   cursor: pointer;
 
 }
@@ -232,7 +187,6 @@ section a {
 .container-a {
   justify-content: center;
   display: flex;
-  flex-wrap: wrap;
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   font-family: Rubik;
@@ -244,7 +198,6 @@ section a {
 .container-b {
   justify-content: center;
   display: flex;
-  flex-wrap: wrap;
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   font-family: Rubik;
@@ -277,7 +230,6 @@ section a {
   padding: 20px;
   width: 200px;
   transition: all 0.5s;
-
   margin: 5px;
 }
 
@@ -318,7 +270,6 @@ footer {
 }
 
 .footer-container {
-  margin-left: 7rem;
   display: flex;
   flex-direction: row;
   color: var(--bg-secondary);
@@ -358,7 +309,6 @@ footer a{
 
 .footer-bottom {
   margin: 0 auto;
-  margin-left: 5rem;
   padding: 0 15px;
   padding-left: 50px;
   overflow: auto;
@@ -376,63 +326,10 @@ footer a{
 }
 
 
-
-
-/*pantallas grandes*/
-
-@media screen and (min-width: 600px) {
-  .navbar:hover {
-    width: 20rem;
-  }
-
-  .navbar {
-    top: 0;
-    width: 6rem;
-    height: 100vh;;
-  }
-
-  .navbar:hover .link-text {
-    display: inline;
-  }
-
-}
-
 /*pantallas pequeñas*/
 
 @media screen and (max-width:600px) {
-  .navbar {
-    bottom: 0;
-    width: 100vw;
-    height: 2.5rem;
-  }
 
-  main {
-    margin: 0;
-  }
-
-.logo {
-  display: none;
-}
-
-.navbar-nav {
-  flex-direction: row;
-}
-
-.nav-link {
-  justify-content: center;
-}
-
-.container {
-  margin-left: 0;
-}
-
-section {
-  margin-left: 0;
-}
-
-.footer-container {
-  margin-left: 0;
-}
 .footer-column {
   margin: 0;
   padding: 5%;
